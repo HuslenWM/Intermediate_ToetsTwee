@@ -1,0 +1,15 @@
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\bin\Debug\net6.0\IntermediateToetsTwee.exe
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\bin\Debug\net6.0\IntermediateToetsTwee.deps.json
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\bin\Debug\net6.0\IntermediateToetsTwee.runtimeconfig.json
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\bin\Debug\net6.0\IntermediateToetsTwee.dll
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\bin\Debug\net6.0\IntermediateToetsTwee.pdb
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.csproj.AssemblyReference.cache
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.AssemblyInfoInputs.cache
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.AssemblyInfo.cs
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.csproj.CoreCompileInputs.cache
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.dll
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\refint\IntermediateToetsTwee.dll
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.pdb
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\IntermediateToetsTwee.genruntimeconfig.cache
+C:\Users\Huzzy\Documents\GitHub\IntermediateToetsTwee\IntermediateToetsTwee\obj\Debug\net6.0\ref\IntermediateToetsTwee.dll
