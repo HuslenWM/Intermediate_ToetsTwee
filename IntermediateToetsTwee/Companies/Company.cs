@@ -14,6 +14,9 @@ namespace IntermediateToetsTwee.Companies
         public Company(string companyName)
         {
             CompanyName = companyName;
+            Advertisements = new List<IAdvertisement>();
+            Users = new List<IUser>();
+            
 
         }
 
@@ -22,7 +25,7 @@ namespace IntermediateToetsTwee.Companies
 
         public int GetVAT() => VAT;
         public string CompanyName { get; set; }
-        public List<IUser>? Users { get; set; }
+        public List<IUser> Users { get; set; }
         public Location Location { get; set; }
         public List<IAdvertisement>? Advertisements { get; set; }
         public IUser ContactPerson { get; set; }

@@ -4,5 +4,6 @@
     {
         private const string BannerUri = "http://cdn.wunderminds.com/banner/";
         public Uri GetUri() => new Uri(BannerUri + Guid);
+        public override string ToString()=> $"IOnlineAdvertisement {BannerUri}" ;
     }
 }
