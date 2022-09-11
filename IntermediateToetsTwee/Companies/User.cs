@@ -1,6 +1,6 @@
 ﻿using IntermediateToetsTwee.Advertisements;
 
-namespace IntermediateToetsTwee
+namespace IntermediateToetsTwee.Companies
 {
     public class User : IUser
     {

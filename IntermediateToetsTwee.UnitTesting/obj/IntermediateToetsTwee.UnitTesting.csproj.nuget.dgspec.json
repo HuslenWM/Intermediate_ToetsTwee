@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj": {}
+    "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj": {
+    "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj",
+        "projectUniqueName": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj",
         "projectName": "IntermediateToetsTwee.UnitTesting",
-        "projectPath": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj",
-        "packagesPath": "C:\\Users\\Huzzy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\obj\\",
+        "projectPath": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\IntermediateToetsTwee.UnitTesting.csproj",
+        "packagesPath": "C:\\Users\\Hsaru\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee.UnitTesting\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Huzzy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hsaru\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj": {
-                "projectPath": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj"
+              "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj": {
+                "projectPath": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj"
               }
             }
           }
@@ -93,22 +89,18 @@
         }
       }
     },
-    "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj": {
+    "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj",
+        "projectUniqueName": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj",
         "projectName": "IntermediateToetsTwee",
-        "projectPath": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj",
-        "packagesPath": "C:\\Users\\Huzzy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Huzzy\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\obj\\",
+        "projectPath": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\IntermediateToetsTwee.csproj",
+        "packagesPath": "C:\\Users\\Hsaru\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hsaru\\OneDrive\\Documents\\GitHub\\Intermediate_ToetsTwee\\IntermediateToetsTwee\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Huzzy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hsaru\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

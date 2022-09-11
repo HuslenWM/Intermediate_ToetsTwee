@@ -1,4 +1,5 @@
 ﻿using IntermediateToetsTwee.Advertisements;
+using IntermediateToetsTwee.Companies;
 using System.Data.Common;
 
 namespace IntermediateToetsTwee
@@ -8,13 +9,7 @@ namespace IntermediateToetsTwee
         static void Main(string[] args)
         {
             var main = new Main();
-            foreach (var company in main.Companies!)
-            {
-                if (company is NlCompany)
-                {
-                    Console.WriteLine(company.ToString());
-                }
-            }
+
 
         }
     }
@@ -22,13 +17,77 @@ namespace IntermediateToetsTwee
     {
         public List<IAdvertisement> Advertisements { get; set; }
         public List<ICompany>? Companies { get; set; }
-        public Company NlCompany { get; set; }
-        public Company BeCompany { get; set; }
+
+        public Company nlCompany { get; set; }
+        public Company beCompany { get; set; }
         public List<IUser> FirstCompanyUsers { get; set; }
         public List<IUser> SecondCompanyUsers { get; set; }
+        public List<IUser> AllUsers { get; set; }
+        public List<BeCompany> BeCompanies { get; set; }
+        public List<NlCompany> NlCompanies { get; set; }
         public IUser ContactPerson { get; set; }
+
         public Main()
         {
+            var controller = new CompanyController();
+            var companies = new List<ICompany>()
+            {
+                new NlCompany("Nl1"),
+                new BeCompany("BE1"),
+                new BeCompany("Be2"),
+                null,
+                new BeCompany("Be3"),
+                new BeCompany("BE4"),
+                new NlCompany("Nl2"),
+                new NlCompany("Nl3")
+            };
+
+            // Returns [List<NlCompany>, List<BeCompany>]
+            var action = controller.SortCompaniesByCountry(companies);
+            Console.WriteLine(action);
+            tester();
+        }
+
+        public void InitializeData()
+        {
+            var nlCompany = new NlCompany("NL WunderMinds");
+            var beCompany = new BeCompany("BE CodeCapital");
+            var ahCompany = new NlCompany("NL Albert Heijn");
+
+            var nlCompanyLoc = new Location("Melkweg", 1, "XXXX");
+            var beCompanyLoc = new Location("Verweg", 2, "ZZZZ");
+            var ahCompanyLoc = new Location("Meerweg", 3, "FFFF");
+
+            nlCompany.ContactPerson = new User("nlContact", "nl@live.com", new Location("NL eenstraat", 2, "ABCD"), nlCompany);
+            beCompany.ContactPerson = new User("beContact", "be@live.com", new Location("BE eenstraat", 3, "EEEE"), beCompany);
+            ahCompany.ContactPerson = new User("ahContact", "ah@live.com", new Location("NL eenstraat", 4, "ZZZZ"), ahCompany);
+
+            nlCompany.Users = new List<IUser>()
+            {
+                new User("Henk", "henk@gmail.com", new Location("DStreet", 5, "1234"), nlCompany),
+                new User("Peter", "peter@gmail.com", new Location("EStreet", 6, "1223"), nlCompany),
+                new User("Arnold", "arnold@gmail.com", new Location("FStreet", 7, "1332"), nlCompany),
+                new User("Pieter", "pieter@gmail.com", new Location("DStreet", 5, "1234"), nlCompany),
+                new User("Kayn", "Kayn@gmail.com", new Location("EStreet", 6, "1223"), nlCompany)
+            };
+
+            beCompany.Users = new List<IUser>()
+            {
+                new User("Henk", "henk@gmail.com", new Location("DStreet", 5, "1234"), beCompany),
+                new User("Peter", "peter@gmail.com", new Location("EStreet", 6, "1223"), beCompany),
+                new User("Arnold", "arnold@gmail.com", new Location("FStreet", 7, "1332"), beCompany),
+                new User("Pieter", "pieter@gmail.com", new Location("DStreet", 5, "1234"), beCompany),
+                new User("Kayn", "Kayn@gmail.com", new Location("EStreet", 6, "1223"), beCompany)
+            };
+
+            ahCompany.Users = new List<IUser>()
+            {
+                new User("Henk", "henk@gmail.com", new Location("DStreet", 5, "1234"), ahCompany),
+                new User("Peter", "peter@gmail.com", new Location("EStreet", 6, "1223"), ahCompany),
+                new User("Arnold", "arnold@gmail.com", new Location("FStreet", 7, "1332"), ahCompany),
+                new User("Pieter", "pieter@gmail.com", new Location("DStreet", 5, "1234"), ahCompany),
+                new User("Kayn", "Kayn@gmail.com", new Location("EStreet", 6, "1223"), ahCompany)
+            };
 
             Advertisements = new List<IAdvertisement>()
             {
@@ -37,162 +96,42 @@ namespace IntermediateToetsTwee
                 new SocialMediaPost(),
                 new SocialMediaPost(),
                 new Billboard(new Location("AStreet", 5, "ABCD")),
-                new Billboard(new Location("BStreet", 9, "EFGH"))
-            };
-            var locationFirstCompany = new Location("Melkweg", 1, "XXXX");
-            var locationSecondCompany = new Location("Verweg", 2, "ZZZZ");
-
-            Companies = new List<ICompany>();
-            NlCompany = new NlCompany("NL WunderMinds");
-            BeCompany = new BeCompany("BE CodeCapital");
-            ContactPerson = new User("Mart", "mart@live.com", new Location("Eenstraat", 2, "ABCD"), NlCompany);
-
-            FirstCompanyUsers = new List<IUser>()
-            {
-                new User("Henk", "henk@gmail.com", new Location("DStreet", 5, "1234"), NlCompany),
-                new User("Peter", "peter@gmail.com", new Location("EStreet", 6, "1223"), NlCompany),
-                new User("Arnold", "arnold@gmail.com", new Location("FStreet", 7, "1332"), NlCompany),
-                ContactPerson
-              
+                new Billboard(new Location("BStreet", 9, "EFGH")),
+                new Advertisement(),
+                new Advertisement()
             };
 
-            SecondCompanyUsers = new List<IUser>()
+            nlCompany.Advertisements = Advertisements;
+            beCompany.Advertisements = Advertisements;
+            ahCompany.Advertisements = Advertisements;
+
+            Companies = new List<ICompany>() { nlCompany, beCompany, ahCompany };
+        }
+
+
+
+
+        public void tester()
+        {
+            var controller = new UserController();
+            var companyA = new NlCompany("companyA");
+            var expected = new User("ContactPersonA", "@live.com", new Location("b", 1, "a"), companyA);
+            companyA.ContactPerson = expected;
+            var users = new List<IUser>()
             {
-                new User("Arjan", "arjan@gmail.com", new Location("GStreet", 8, "1442"), BeCompany),
-                ContactPerson,
-                new User("Melissa", "melissa@gmail.com", new Location("HStreet", 9, "1554"), BeCompany),
-                new User("Anne", "anne@gmail.com", new Location("IStreet", 10, "2222"), BeCompany)
-                
+                new User("reg", "@live.com", new Location("b",1,"a") ,companyA),
+                new User("rege", "@live.com", new Location("b",1,"a") ,companyA),
+                expected,
+                new User("regex", "@live.com", new Location("b",1,"a") ,companyA),
+                new User("regfe", "@live.com", new Location("b",1,"a") ,companyA)
             };
 
-            NlCompany.Users = FirstCompanyUsers;
-            NlCompany.Advertisements = Advertisements;
-            NlCompany.ContactPerson = ContactPerson;
-            NlCompany.Location = locationFirstCompany;
-
-            BeCompany.Users = SecondCompanyUsers;
-            BeCompany.Advertisements = Advertisements;
-            BeCompany.ContactPerson = ContactPerson;
-            BeCompany.Location = locationSecondCompany;
-            Companies.Add(NlCompany);
-            Companies.Add(BeCompany);
-
-            IsUserCompanyContactPerson();
+            var actual = controller.GetContactPersonsFromUsers(users);
         }
 
-        public List<IOnlineAdvertisement> GetIOnlineAdvertisements()
-        {
-            if (Advertisements == null || !Advertisements.Any())
-            {
-                throw new Exception("Advertisements is null or empty");
-            }
-            var onlineAdvertisements = new List<IOnlineAdvertisement>();
-            foreach (var advertisement in Advertisements)
-            {
-                if (advertisement is IOnlineAdvertisement)
-                {
-                    onlineAdvertisements.Add((IOnlineAdvertisement)advertisement);
-                }
-            }
-            return onlineAdvertisements;
-        }
 
-        public List<Location> GetBillboardLocations()
-        {
-            var billboards = GetBillboardsFromAdvertisements();
-            if (billboards == null)
-            {
-                throw new Exception("List is null");
-            }
-           
-            var billboardLocations = new List<Location>();
-            foreach (var billboard in billboards)
-            {
-                billboardLocations.Add(billboard.Location);
-            }
 
-            return billboardLocations;
-        }
 
-        public List<Billboard> GetBillboardsFromAdvertisements()
-        {
-            if (Advertisements == null || !Advertisements.Any())
-            {
-                throw new Exception("Advertisements is null or empty");
-            }
-            var billboard = new List<Billboard>();
-
-            foreach (var advertisement in Advertisements)
-            {
-                if (advertisement is Billboard)
-                {
-                    billboard.Add((Billboard) advertisement);
-                }
-            }
-            return billboard;
-
-        }
-
-        public List<Guid> GetGuidsFromAdvertisements()
-        {
-            if (Advertisements == null || !Advertisements.Any())
-            {
-                throw new Exception("Advertisements is null or empty");
-            }
-
-            var guids = new List<Guid>();
-
-            foreach (var advertisement in Advertisements)
-            {
-                guids.Add(advertisement.Guid);
-            }
-
-            return guids;
-        }
-
-        public List<string> GetCompanyFromUsers()
-        {
-            if (Companies == null || !Companies.Any())
-            {
-                throw new Exception("Companies is null or empty");
-            }
-
-            var companyUsers = new List<string>();
-
-            foreach (var company in Companies)
-            {
-                if(company.Users == null || !company.Users.Any())
-                {
-                    throw new Exception("Users is null or empty");
-                }
-                foreach (var user in company.Users)
-                {
-                    companyUsers.Add($"{user.UserName} works at {user.Company.ToString}");
-                }
-            }
-            return companyUsers;
-            // Check companies if contains anything
-            // Check companies.Users if contains anything
-            // Check expected List<string>
-        }
-
-        public List<bool> IsUserCompanyContactPerson()
-        {
-            if (FirstCompanyUsers == null || !FirstCompanyUsers.Any())
-            {
-                throw new Exception("List of company users is null or empty");
-            }
-
-            var boolUserIsContactPerson = new List<bool>();
-
-            Func<User, bool> boolUsers = user => user.Equals(ContactPerson) ? true : false;
-
-            foreach (var user in FirstCompanyUsers)
-            {
-                boolUserIsContactPerson.Add(boolUsers(user as User));
-            }
-            return boolUserIsContactPerson;
-        }
 
 
 

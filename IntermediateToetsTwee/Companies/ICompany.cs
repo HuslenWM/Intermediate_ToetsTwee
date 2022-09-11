@@ -1,10 +1,10 @@
 ﻿using IntermediateToetsTwee.Advertisements;
 
-namespace IntermediateToetsTwee
+namespace IntermediateToetsTwee.Companies
 {
     public interface ICompany
     {
-       
+
         public string CompanyName { get; set; }
         public List<IUser> Users { get; set; }
         public List<IAdvertisement> Advertisements { get; set; }
