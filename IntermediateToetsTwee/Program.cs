@@ -32,7 +32,7 @@ namespace IntermediateToetsTwee
             
             InitializeData();
             
-            performFunctions();
+            performFunctions(new AdvertisementController(), new CompanyController(), new UserController());
    /*         var companies = new List<ICompany>()
             {
                 new NlCompany("Nl1"),
@@ -49,9 +49,6 @@ namespace IntermediateToetsTwee
 
         public void InitializeData()
         {
-            CompanyController = new CompanyController();
-            AdvertisementController = new AdvertisementController();
-            UserController = new UserController();
             AllUsers = new List<IUser>();
 
             var nlCompany = new NlCompany("NL WunderMinds");
@@ -107,7 +104,7 @@ namespace IntermediateToetsTwee
                 new Advertisement(),
                 new Advertisement()
             };
-
+                
             nlCompany.Advertisements = Advertisements;
             beCompany.Advertisements = Advertisements;
             ahCompany.Advertisements = Advertisements;
@@ -118,8 +115,14 @@ namespace IntermediateToetsTwee
             AllUsers.AddRange(ahCompany.Users);
         }
 
-        public void performFunctions()
+        public void performFunctions(IAdvertisementController advertisementController, 
+                                    ICompanyController companyController, 
+                                    IUserController userController)
         {
+            AdvertisementController = advertisementController;
+            CompanyController = companyController;
+            UserController = userController;
+
             var onlineAdvertisements = AdvertisementController.GetIOnlineAdvertisements(Advertisements);
             Console.WriteLine($"Results from GetOnlineAdvertisements\n");
             foreach (var onlineAdvertisement in onlineAdvertisements) { Console.WriteLine($"{onlineAdvertisement.ToString()}"); }
